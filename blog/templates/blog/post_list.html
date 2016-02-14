@@ -37,7 +37,7 @@
 		#section{
 			background-color: #f9ecf2;
 			color: #333;
-			text-align: center;
+			/*text-align: ;*/
 			margin-top: 5px;
 			padding: 15%;
 			font-family: Verdana;
@@ -64,8 +64,14 @@
 </div>
 
 <div id="section">
-
-	<h1>NAO CONSIGO COLOCAR IMAGEM :C</h1>
+	
+	{% for post in posts %}
+		<div>
+			<p>published: {{ post.published_date }}</p>
+			<h1><a href="" style="color: #333"> {{ post.title}} </a></h1>
+			<p> {{post.text | linebreaks }} </p>
+		</div>
+	{% endfor %}
 </div>
 
 </body>
